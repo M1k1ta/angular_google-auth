@@ -1,5 +1,5 @@
-const BASE_URL = 'http://localhost:5000';
-
+const BASE_URL = 'https://google-auth-service.onrender.com';
+//http://localhost:5000
 type RequestMethod = 'GET' | 'POST';
 
 function request<T>(
