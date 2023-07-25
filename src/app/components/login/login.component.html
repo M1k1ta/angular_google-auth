@@ -1,0 +1,43 @@
+<div class="auth">
+  <div class="auth__modal">
+    <div class="auth__header">
+      <h1 class="auth__title">Login</h1>
+      <a class="auth__link" routerLink="/registration">Create Account</a>
+    </div>
+    <form
+      class="auth__form"
+      (ngSubmit)="handleSubmit()"
+    >
+      <label>
+        <input
+          class="auth__input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="email"
+          required
+        >
+      </label>
+      <label>
+        <input
+          class="auth__input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          required
+        >
+      </label>
+      <button
+        class="auth__button button"
+        type="submit"
+      >
+        Sign in
+      </button>
+    </form>
+
+    <div class="auth__google">
+      <app-google-one-tap></app-google-one-tap>
+    </div>
+  </div>
+</div>
