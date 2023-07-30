@@ -45,6 +45,15 @@ body, html {
 
     padding: 30px;
     border-radius: 3px;
+
+    @media (max-width: 600px) {
+      width: 350px;
+      padding: 20px;
+    }
+
+    @media (max-width: 360px) {
+      width: 300px;
+    }
   }
 
   &__header {

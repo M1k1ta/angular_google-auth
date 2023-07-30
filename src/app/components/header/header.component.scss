@@ -13,6 +13,18 @@
   grid-template-columns: 90% 40%;
   gap: 10px;
 
+  @media (max-width: 500px) {
+    grid-template-columns: 70% 30%;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 60% 30%;
+  }
+
+  @media (max-width: 320px) {
+    grid-template-columns: 60% 25%;
+  }
+
   &__error {
     position: absolute;
     bottom: -40%;
@@ -66,8 +78,35 @@
   color: #ff7f50;
   transition: all 300ms;
 
+  @media (max-width: 600px) {
+    padding: 0 5px;
+    border: none;
+  }
+
   &:hover {
     background-color: #ff7f50;
     color: #fff;
+  }
+}
+
+.desctop {
+  display: none;
+
+  @media (min-width: 600px) {
+    display: block;
+  }
+}
+
+.phone {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+.phone-create-room {
+  @media (max-width: 500px) {
+    display: none;
   }
 }

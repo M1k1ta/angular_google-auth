@@ -41,10 +41,26 @@
     }
   }
 
+  &__close {
+    display: none;
+    background-color: inherit;
+    border: none;
+
+    @media (max-width: 700px) {
+      display: block;
+    }
+  }
+
   &__main {
     position: relative;
     height: calc(100% - 95px);
 
+  }
+}
+
+.tablet {
+  @media (max-width: 460px) {
+    display: none;
   }
 }
 

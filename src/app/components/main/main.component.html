@@ -1,5 +1,8 @@
 <div class="container">
-  <main class="main">
+  <main
+    class="main"
+    [class.room-active-tablet]="selectedRoom !== null"
+  >
     <section class="rooms">
       <ul class="rooms__list" *ngIf="rooms.length; else notRooms">
         <li class="room" *ngFor="let room of rooms">

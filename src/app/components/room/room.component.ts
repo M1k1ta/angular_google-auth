@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgZone } from '@angular/core';
 import { Room } from 'src/types/Room';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from 'src/types/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-room',
@@ -16,6 +17,8 @@ export class RoomComponent {
 
   constructor(
     private UsersService: UsersService,
+    private router: Router,
+    private ngZone: NgZone,
   ) {}
 
   async getUsers() {
@@ -31,5 +34,11 @@ export class RoomComponent {
 
   onUserAdd(user: User) {
     this.users.unshift(user);
+  }
+
+  closeRoom() {
+    this.ngZone.run(() => {
+      this.router.navigate(['/room']);
+    });
   }
 }

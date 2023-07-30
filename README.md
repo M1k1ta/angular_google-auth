@@ -1,5 +1,7 @@
 [DEMO](https://m1k1ta.github.io/angular_google-auth/)
 
+** for back-end(BD and deploing service) used free serveces(Neon and render.com), so first loading datas will be realy long, and maybe need to realoding
+
 Hello. This project I create after getting one test task. The task was to create Google auth and after auth user could invite a friend. Other things I come up with alone. I was creating this app for about 10 days. Two work weeks. Maybe It took a lot of time. But I learned Angular and Google auth when I created this task. So I think It was good practice for me. I created Front-end and Beck-end alone. 
 
 I started from Google auth. I learn a lot of documentation, and did Google auth after some time. It is a small thing, but I found a lot of old information on the internet. Which weist my time. Also, I decided to create standard auth with email and password. Because without it auth seems very small. I don't want to create a white display with one button Google auth. So I add a lot of things in time developing.
