@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { UsersService } from 'src/app/services/users.service';
-import { User } from 'src/types/User';
-import { Router } from '@angular/router';
+import { RoomsService } from 'src/app/services/rooms.service';
+import { Room } from 'src/types/Room';
+import { getAuthUser } from 'src/utils/authUser';
 
 @Component({
   selector: 'app-content',
@@ -9,23 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent {
-  users: User[] = [];
+  rooms: Room[] = [];
+  isLoader = false;
 
   constructor(
-    private UsersService: UsersService,
-    private router: Router,
+    private roomsService: RoomsService,
   ) {}
 
-  async getUsers() {
-    this.users = await this.UsersService.getUsers();
+  async getRooms() {
+    const user = getAuthUser();
+    this.isLoader = true;
+    this.rooms = await this.roomsService.getRoomsByEmail(user.email);
+    this.isLoader = false;
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.getRooms();
   }
 
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+  onRoomCreated(room: Room) {
+    this.rooms.unshift(room);
   }
 }

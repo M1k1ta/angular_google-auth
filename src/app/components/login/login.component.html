@@ -8,25 +8,41 @@
       class="auth__form"
       (ngSubmit)="handleSubmit()"
     >
-      <label>
+      <label class="auth__label">
         <input
           class="auth__input"
+          [class.error]="!!emailError"
           type="email"
           name="email"
           placeholder="Email"
           [(ngModel)]="email"
+          (input)="emailError = ''"
           required
         >
+        <div
+          *ngIf="emailError"
+          class="auth__error"
+        >
+          {{ emailError }}
+        </div>
       </label>
-      <label>
+      <label class="auth__label">
         <input
           class="auth__input"
+          [class.error]="!!passwordError"
           type="password"
           name="password"
           placeholder="Password"
           [(ngModel)]="password"
+          (input)="passwordError = ''"
           required
         >
+        <div
+          *ngIf="passwordError"
+          class="auth__error"
+        >
+          {{ passwordError }}
+        </div>
       </label>
       <button
         class="auth__button button"
@@ -41,3 +57,5 @@
     </div>
   </div>
 </div>
+
+<app-loader *ngIf="isLoader"></app-loader>

@@ -1,9 +1,8 @@
 import { Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { googleSignIn, register } from 'src/api/auth';
+import { register } from 'src/api/auth';
+import { check } from 'src/api/check';
 import { AuthResponse } from 'src/types/AuthResponse';
-
-declare var google: any;
 
 @Component({
   selector: 'app-registration',
@@ -14,35 +13,25 @@ export class RegistrationComponent {
   name = '';
   email = '';
   password = '';
-  nameError = false;
-  emailError = false;
-  passwordError = false;
+  nameError = '';
+  emailError = '';
+  passwordError = '';
+  isLoader = false;
 
   constructor(private router: Router, private ngZone: NgZone) {}
+
+  async ngOnInit() {
+    this.isLoader = true;
+    await check();
+    setTimeout(() => {
+      this.isLoader = false;
+    }, 1000);
+  }
 
   async handleSubmit() {
     const { name, email, password } = this;
 
-    if (name.trim() === '') {
-      this.nameError = true;
-      return;
-    }
-
-    this.nameError = false;
-
-    if (email.trim() === '') {
-      this.emailError = true;
-      return;
-    }
-
-    this.emailError = false;
-
-    if (password.trim() === '') {
-      this.passwordError = true;
-      return;
-    }
-
-    this.passwordError = false;
+    this.isLoader = true;
 
     const user: AuthResponse = await register(
       name,
@@ -50,13 +39,27 @@ export class RegistrationComponent {
       password,
     );
 
+    this.isLoader = false;
+
+    if (user.errors?.name) {
+      this.nameError = user.errors.name;
+    }
+
+    if (user.errors?.email) {
+      this.emailError = user.errors.email;
+    }
+
+    if (user.errors?.password) {
+      this.passwordError = user.errors.password;
+    }
+
     if (user.errors !== undefined) {
       return;
     }
 
     this.ngZone.run(() => {
       localStorage.setItem('token', user.accessToken);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/room']);
     });
 
     this.name = '';

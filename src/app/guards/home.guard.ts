@@ -12,7 +12,7 @@ export class HomeGuard implements CanActivate {
     if (!token) {
       return true;
     } else {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/room']);
       return false;
     }
   }

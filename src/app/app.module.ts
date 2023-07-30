@@ -8,6 +8,11 @@ import { ContentComponent } from './components/content/content.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './components/modal/modal.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MainComponent } from './components/main/main.component';
+import { RoomComponent } from './components/room/room.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { FormsModule } from '@angular/forms';
     GoogleOneTapComponent,
     ContentComponent,
     RegistrationComponent,
-    LoginComponent ,
+    LoginComponent,
+    ModalComponent,
+    HeaderComponent,
+    MainComponent,
+    RoomComponent,
+    LoaderComponent ,
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export class UsersService {
 
   constructor() { }
 
-  async getUsers() {
-    return await client.get<User[]>('/users');
-  }
+  async getUsersByRoomId(roomId: number): Promise<User[]> {
+    return await client.get<User[]>(`/users/${roomId}`);
+  };
 }

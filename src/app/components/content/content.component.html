@@ -1,23 +1,9 @@
-<header class="header">
-  <button class="button">Invite</button>
-  <button class="logout" (click)="logout()">Logout</button>
-</header>
-
-<main class="users">
-  <h1 class="users__title">Users</h1>
-  <ul class="users__list">
-    <li class="user" *ngFor="let user of users">
-      <img
-        *ngIf="user.picture; else img"
-        class="user__photo"
-        [src]="user.picture"
-        [alt]="user.name"
-      >
-      <ng-template  #img>
-        <div class="user__img">{{ user.name[0].toUpperCase() }}</div>
-      </ng-template>
-      <p>{{ user.name }}</p>
-      <p>{{ user.email }}</p>
-    </li>
-  </ul>
-</main>
+<app-header
+  (createRoomEvent)="onRoomCreated($event)"
+>
+</app-header>
+<app-main
+  [rooms]="rooms"
+  [isLoader]="isLoader"
+>
+</app-main>
