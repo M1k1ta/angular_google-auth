@@ -1,0 +1,32 @@
+<header class="header">
+  <form
+    class="form"
+    (ngSubmit)="handleSubmit()"
+  >
+    <label class="form__label">
+      <input
+        class="form__input"
+        [class.error]="!!error"
+        type="text"
+        name="roomName"
+        placeholder="Name to new room"
+        [(ngModel)]="roomName"
+        (input)="error = ''"
+        required
+      >
+      <div
+        *ngIf="error"
+        class="form__error"
+      >
+        {{ error }}
+      </div>
+    </label>
+    <button
+      type="submit"
+      class="form__button"
+    >
+      Create room
+    </button>
+  </form>
+  <button class="logout" (click)="logout()">Logout</button>
+</header>

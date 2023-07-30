@@ -1,0 +1,84 @@
+<div class="auth">
+  <div class="auth__modal">
+    <div class="auth__header">
+      <h1 class="auth__title">Registration</h1>
+      <a class="auth__link" routerLink="/login">Sign In</a>
+    </div>
+    <form
+      class="auth__form"
+      (ngSubmit)="handleSubmit()"
+    >
+      <label class="auth__label">
+        <input
+          class="auth__input"
+          [class.error]="!!nameError"
+          type="text"
+          name="name"
+          placeholder="Name"
+          [(ngModel)]="name"
+          (input)="nameError = ''"
+          required
+        >
+
+        <div
+          *ngIf="nameError"
+          class="auth__error"
+        >
+          {{ nameError }}
+        </div>
+      </label>
+
+      <label class="auth__label">
+        <input
+          class="auth__input"
+          [class.error]="!!emailError"
+          type="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="email"
+          (input)="emailError = ''"
+          required
+        >
+
+        <div
+          *ngIf="emailError"
+          class="auth__error"
+        >
+          {{ emailError }}
+        </div>
+      </label>
+
+      <label class="auth__label">
+        <input
+          class="auth__input"
+          [class.error]="!!passwordError"
+          type="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          (input)="passwordError = ''"
+          required
+        >
+
+        <div
+          *ngIf="passwordError"
+          class="auth__error"
+        >
+          {{ passwordError }}
+        </div>
+      </label>
+      <button
+        class="auth__button button"
+        type="submit"
+      >
+        Sign in
+      </button>
+
+    </form>
+    <div class="auth__google">
+      <app-google-one-tap></app-google-one-tap>
+    </div>
+  </div>
+</div>
+
+<app-loader *ngIf="isLoader"></app-loader>
