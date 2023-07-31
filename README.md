@@ -1,16 +1,21 @@
 [DEMO](https://m1k1ta.github.io/angular_google-auth/)
 
-** for back-end(BD and deploing service) used free serveces(Neon and render.com), so first loading datas will be realy long, and maybe need to realoding
+** I used free services for the back-end(BD-Neon and deploying service-render.com), so the first loading data will be really long, and maybe need to reload
 
-Hello. This project I create after getting one test task. The task was to create Google auth and after auth user could invite a friend. Other things I come up with alone. I was creating this app for about 10 days. Two work weeks. Maybe It took a lot of time. But I learned Angular and Google auth when I created this task. So I think It was good practice for me. I created Front-end and Beck-end alone. 
+---INTRODUCTION---
+Hello. I created this project after receiving a test task. The task was to implement Google authentication, and after authentication, users could invite a friend. I came up with other features on my own. It took me about 10 days, equivalent to two work weeks, to complete the project. Perhaps it took longer due to the time spent learning Angular and Google authentication as I worked on the task. However, I consider it good practice for me. I handled both the Front-end and Back-end development alone.
 
-I started from Google auth. I learn a lot of documentation, and did Google auth after some time. It is a small thing, but I found a lot of old information on the internet. Which weist my time. Also, I decided to create standard auth with email and password. Because without it auth seems very small. I don't want to create a white display with one button Google auth. So I add a lot of things in time developing.
+---TECHNOLOGIES---
+In this project, I utilized Angular.js, SCSS, Node.js, Express, Sequelize, TypeScript, Nodemailer, and some other small libraries like cors.
 
-So, auth I styled without angular function. I know that angular has methods that help create easy forms. But I don't look for an easy way, and at that time I don't want to spend my time on easy things now. I can learn it later. Also, I created the back-end to auth. I worked with Node, Express, and Sequelize before. So I don't have a problem with it. 
+---DEVELOPMENT PROCESS---
+I started with Google authentication, which required going through a lot of documentation. After some time, I successfully implemented Google authentication. Despite encountering outdated information on the internet, I persevered. Additionally, I decided to implement standard authentication using email and password. I wanted to avoid having just a white screen with only one button for Google authentication. So, I added more features as the development progressed.
 
-After auth, I learned routing in Angular. With Angular docs and chat GPT I understood how to block content in time login or registration. After I started creating content. At the same time, I thought about how will be looking my app. So in this task, I also was how designer. If you use Telegram you can understand that I looked on this app when creating my project.
+For the authentication form, I styled it without using an Angular function. I know Angular has methods that make creating forms easier, but I preferred to challenge myself and learn those methods later. I also developed the Back-end for authentication, which was not a problem since I had experience working with Node, Express, and Sequelize before.
 
-In this part, I want to boast of the back end. Before the front-end part also I did the back-end, and for me it was interesting. I try to do so methods that the user can see only so rooms with this user there are. Also, I created a bridge table. It is a table need to do a bridge between user data and room data. And this method I used in the first time and it was interesting for me. I remember that when I created the back end I was really glad!
+Once authentication was done, I learned about routing in Angular using the Angular docs and chat GPT. I successfully blocked content until the user logged in or registered. As I started building the content, I simultaneously visualized how my app would look. In a way, I also played the role of a designer. If you use Telegram, you might see some similarities in the design of my project.
 
-About things that users can do in my project. 
-Users can register google auth/form auth and log in the same. The user will be in the room Welcome when creating an account. Also, users can create rooms, and add friends to rooms using email. When the user adds a friend, the friend adds to the room and sends a message with-link to the email. If the user who gets invited to the room doesn't register in my project this user adds to data this room. But don't show this user if this user doesn't register.
+I want to highlight the Back-end development. Even before working on the Front-end, I found the Back-end work interesting. I designed methods so that users could only see the rooms they were part of. I also created a bridge table, which serves as a connection between user data and room data. I applied this method for the first time, and it was like me. I recall feeling really pleased when I completed the Back-end.
+
+---FUNCTIONALITY OF THE PROJECT---
+Users can register using Google authentication or the standard email/password form. Upon creating an account, the user will be placed in the Welcome room. Additionally, users can create rooms and add friends to those rooms using email invitations. When a user adds a friend, the friend is added to the room and receives an email with a link. If the invited user is not registered in my project, they will be added to the data of the room but will not be displayed until they register.
