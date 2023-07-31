@@ -2,7 +2,7 @@
 
 ** I used free services for the back-end(BD-Neon and deploying service-render.com), so the first loading data will be really long, and maybe need to reload
 
----INTRODUCTION---:
+---INTRODUCTION---                                                                                                                       
 Hello. I created this project after receiving a test task. The task was to implement Google authentication, and after authentication, users could invite a friend. I came up with other features on my own. It took me about 10 days, equivalent to two work weeks, to complete the project. Perhaps it took longer due to the time spent learning Angular and Google authentication as I worked on the task. However, I consider it good practice for me. I handled both the Front-end and Back-end development alone.
 
 ---TECHNOLOGIES---:
