@@ -1,9 +1,8 @@
 .room {
   background-color: #ff9a75;
   border-left: 1.5px solid #333;
-  border-bottom: 1.5px solid #333;
-  height: 100%;
   width: 100%;
+  height: 100%;
 
   &__header {
     display: flex;
@@ -53,8 +52,17 @@
 
   &__main {
     position: relative;
-    height: calc(100% - 95px);
+    height: calc(100% - 75px);
+    overflow-y: auto;
 
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ffbaa2;
+      border-radius: 50px;
+    }
   }
 }
 
